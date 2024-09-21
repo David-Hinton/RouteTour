@@ -2,9 +2,7 @@
 RouteTour is a web service that converts GPX files to KML format and generates flyover-style videos using Google Earth API street view images. This allows users to visualize the condition and traffic patterns of their routes in an engaging and informative way.
 Sure! Here's a README description for your GitHub repository:
 
-# GPX to KML Converter and Flyover Video Generator
-
-## Overview
+## Technical Overview
 
 This project provides a web service that allows users to upload GPX (GPS Exchange Format) files, convert them to KML (Keyhole Markup Language) files, and generate flyover-style videos using Google Earth API street view images. The service is designed to help users visualize the condition and traffic patterns of their routes.
 
