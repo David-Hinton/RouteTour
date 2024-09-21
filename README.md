@@ -82,7 +82,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Thanks to the contributors and the open-source community.
 - Special thanks to Google for providing the Google Earth API.
-
----
-
-Feel free to customize this README to better fit your project's specifics! Let me know if you need any more details or adjustments.
