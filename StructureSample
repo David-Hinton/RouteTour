@@ -1,0 +1,28 @@
+/MyWebApp
+│
+├── /backend
+│   ├── /Controllers
+│   │   └── PostsController.cs
+│   ├── /Models
+│   │   └── Post.cs
+│   ├── /Data
+│   │   └── BlogContext.cs
+│   ├── /Services
+│   │   └── PostService.cs
+│   ├── appsettings.json
+│   ├── Program.cs
+│   └── Startup.cs
+│
+├── /frontend
+│   ├── /components
+│   │   ├── post-list.js
+│   │   └── post-item.js
+│   ├── /styles
+│   │   └── main.css
+│   ├── index.html
+│   ├── main.js
+│   └── package.json
+│
+├── .gitignore
+├── README.md
+└── MyWebApp.sln
