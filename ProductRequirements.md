@@ -18,6 +18,8 @@
   - Option to download the generated KML file.
   - Option to download the generated video.
   - Shareable link for the video.
+- **Technologies**
+  - [Shoelance](https://shoelace.style/) - A library of web components
 
 #### 2. **Backend Services**
 - **File Handling**:
