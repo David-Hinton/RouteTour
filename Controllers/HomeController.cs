@@ -15,6 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        //Get API Key
+        ViewData["apiKey"] = Environment.GetEnvironmentVariable("STREET_VIEW_API_KEY");
         return View();
     }
 

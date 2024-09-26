@@ -3,6 +3,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// load enviroment variables
+DotNetEnv.Env.Load();
+DotNetEnv.Env.TraversePath().Load();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
