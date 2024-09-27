@@ -1,5 +1,5 @@
 ﻿function initialize() {
-    let map, panorama, coordinates = [];
+    let map, panorama, coords = [];
     let isPaused = false; // Flag to control the update
 
     map = new google.maps.Map(document.getElementById("map"), {
@@ -42,12 +42,8 @@
                     return { lng: parseFloat(longitude), lat: parseFloat(latitude), elevation: parseFloat(elevation) };
                 });
                 console.log('Coords loaded:', coords);
-                coordinates.push({
-                    lat: parseFloat(coords[0].lat),
-                    lng: parseFloat(coords[0].lng)
-                });
             });
-            console.log('Placemarks loaded:', coordinates);
+
             let index = 0;
 
             function updatePosition() {
