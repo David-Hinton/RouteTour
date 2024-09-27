@@ -1,12 +1,14 @@
 ﻿function initialize() {
     let map, panorama, coordinates = [];
+    let isPaused = false; // Flag to control the update
+
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 40.48986, lng: -79.90089 },
         zoom: 14,
     });
 
     const routeLayer = new google.maps.KmlLayer({
-        url: "https://file.io/uL4wVRnPccgY",
+        url: "https://file.io/uL4wVRnPccgY", // file.io upload
         map: map,
     });
 
@@ -22,7 +24,7 @@
 
     async function fetchKML() {
         try {
-            const response = await fetch('http://192.168.1.160:8080/TestFile.kml');
+            const response = await fetch('http://192.168.1.160:8080/TestFile.kml'); //local server with cors enabled:  http-server -p 8080 --cors
             const kmlText = await response.text();
             const parser = new DOMParser();
             const kmlDoc = parser.parseFromString(kmlText, 'application/xml');
@@ -49,6 +51,7 @@
             let index = 0;
 
             function updatePosition() {
+                if (isPaused) return; // Check if paused
                 console.log('coords', coords);
                 if (index < coords.length) {
                     const nextCoord = coords[index];
@@ -64,6 +67,12 @@
             }
 
             updatePosition();
+
+            // Add click event to toggle pause
+            document.getElementById("pause").addEventListener("click", () => {
+                isPaused = !isPaused;
+                if (!isPaused) updatePosition(); // Resume if unpaused
+            });
         }
     });
 }
