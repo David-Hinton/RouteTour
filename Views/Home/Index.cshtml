@@ -10,6 +10,7 @@
         <div id="map"></div>
         <div id="pano"></div>
      </div>
+     <canvas id="elevationChart" width="800" height="400"></canvas>
 
     <!-- 
       The `defer` attribute causes the script to execute after the full HTML
@@ -22,4 +23,5 @@
       src="https://maps.googleapis.com/maps/api/js?key=@ViewData["apiKey"]&callback=initialize&v=weekly"
       defer
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </div>

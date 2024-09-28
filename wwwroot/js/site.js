@@ -1,4 +1,5 @@
 ﻿function initialize() {
+    const ctx = document.getElementById('elevationChart').getContext('2d');
     let map, panorama, coords = [];
     let isPaused = false; // Flag to control the update
 
@@ -39,10 +40,49 @@
             result.forEach(placemark => {
                 coords = placemark.getElementsByTagName('coordinates')[0].textContent.trim().split(" ").map(point => {
                     const [longitude, latitude, elevation] = point.split(",");
-                    return { lng: parseFloat(longitude), lat: parseFloat(latitude), elevation: parseFloat(elevation) };
+                    return { lng: parseFloat(longitude), lat: parseFloat(latitude), ele: parseFloat(elevation) };
                 });
                 console.log('Coords loaded:', coords);
             });
+
+            const labels = coords.map((_, index) => `${(index * 40 / (coords.length - 1)).toFixed(2)} miles`);
+            const elevations = coords.map(point => point.ele);
+        
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Elevation (ft)',
+                    data: elevations,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.1, // This property smooths the line
+                    spanGaps: true
+                }]
+            };
+        
+            const config = {
+                type: 'line',
+                data: data,
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Miles'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Elevation (ft)'
+                            }
+                        }
+                    }
+                }
+            };
+        
+            new Chart(ctx, config);
 
             let index = 0;
 
