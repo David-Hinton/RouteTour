@@ -1,5 +1,5 @@
 # Vélo Route
-RouteTour is a web service that converts GPX files to KML format and generates flyover-style videos using Google Earth API street view images. This allows users to visualize the condition and traffic patterns of their routes in an engaging and informative way.
+Vélo Route is a web service that converts GPX files to KML format and generates flyover-style videos using Google Earth API street view images. This allows users to visualize the condition and traffic patterns of their routes in an engaging and informative way.
 
 ## Demo - Route Following
 ![VeloRoute-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/4b1faa6e-257d-4a24-bebd-ca87af07d9bd)
